@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">placesapp</string>
+
+    <string name="places_list">Places List</string>
+
+    <string name="votes">votes</string>
+
+    <plurals name="votes">
+        <item quantity="one">%d vote</item>
+        <item quantity="other">%d votes</item>
+    </plurals>
+
+    <string name="votes_string">%s votes</string>
+    <string name="distance_string">%.2f mi *</string>
+</resources>

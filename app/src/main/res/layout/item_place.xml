@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.test.placesapp.viewmodel.PlaceItemViewModel" />
+    </data>
+
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:layout_marginTop="2dp"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:padding="@dimen/list_item_padding"
+        card_view:cardCornerRadius="2dp"
+        card_view:cardUseCompatPadding="true"
+        card_view:elevation="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:padding="@dimen/list_item_padding">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/list_item_padding"
+                android:layout_marginTop="@dimen/list_item_padding"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    style="@style/TitleLeft"
+                    android:text="@{viewModel.placeTitle}" />
+
+                <TextView
+                    android:id="@+id/tv_distance"
+                    style="@style/Subtitle"
+                    android:text="@{viewModel.distance}" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_fs_value"
+                        style="@style/Subtitle"
+                        android:background="@drawable/fs_background"
+                        android:padding="2dp"
+                        android:text="@{viewModel.fsValue}" />
+
+                    <TextView
+                        android:id="@+id/tv_votes_count"
+                        style="@style/Subtitle"
+                        android:layout_marginLeft="@dimen/list_item_padding"
+                        android:text="@{viewModel.countVotes}" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_place_image"
+                android:layout_width="@dimen/place_item_image_size"
+                android:layout_height="@dimen/place_item_image_size"
+                app:imageUrl="@{viewModel.imageUrl}" />
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+
+</layout>

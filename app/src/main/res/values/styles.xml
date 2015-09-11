@@ -1,0 +1,25 @@
+<resources>
+
+    <style name="Base.AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#673AB7</item>
+        <item name="colorPrimaryDark">#512DA8</item>
+        <item name="colorAccent">#FF4081</item>
+    </style>
+
+    <style name="AppTheme" parent="Base.AppTheme" />
+
+    <style name="TitleLeft" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:gravity">left</item>
+    </style>
+
+    <style name="Subtitle" parent="@android:style/TextAppearance.Small">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:gravity">left</item>
+    </style>
+
+</resources>
