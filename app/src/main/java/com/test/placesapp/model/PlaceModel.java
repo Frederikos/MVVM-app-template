@@ -8,7 +8,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-//TODO implement Parcel, Observable and Gson
 public class PlaceModel {
 
     static final String TAG = PlaceModel.class.getSimpleName();

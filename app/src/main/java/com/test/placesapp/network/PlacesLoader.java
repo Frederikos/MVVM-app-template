@@ -14,6 +14,8 @@ import java.util.ArrayList;
 
 public class PlacesLoader {
 
+    public static final int COUNT_PER_PAGE = 8;
+
     static final String PAGE1_URL = "https://gist.githubusercontent.com/benigeri/1ba45a098aed0b21ae0c/raw/db28f872d6dd59c5766710abc685e01c25a0f020/places1.json";
     static final String PAGE2_URL = "https://gist.githubusercontent.com/benigeri/1ba45a098aed0b21ae0c/raw/1fccaeb4fefc105ed2d0430eea80ede57fe2a6e9/places2.json";
 
