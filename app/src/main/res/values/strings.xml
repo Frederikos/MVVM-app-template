@@ -12,4 +12,5 @@
 
     <string name="votes_string">%s votes</string>
     <string name="distance_string">%.2f mi *</string>
+    <string name="network_error">Network error. Try again later.</string>
 </resources>

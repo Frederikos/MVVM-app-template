@@ -11,11 +11,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import com.test.placesapp.R;
 import com.test.placesapp.adapters.PlacesAdapter;
 import com.test.placesapp.databinding.ActivityPlacesListBinding;
-import com.test.placesapp.model.PlaceModel;
-import com.test.placesapp.network.PlacesLoader;
-import com.test.placesapp.utils.Utils;
-
-import java.util.ArrayList;
+import com.test.placesapp.model.PlacesResponseModel;
+import com.test.placesapp.network.Callback;
+import com.test.placesapp.network.RestClient;
 
 public class PlacesListActivity extends AppCompatActivity {
 
@@ -42,6 +40,7 @@ public class PlacesListActivity extends AppCompatActivity {
 
         private void setupViews() {
             placesAdapter = new PlacesAdapter(PlacesListActivity.this);
+
             bind.recyclerPlaces.setLayoutManager(new LinearLayoutManager(PlacesListActivity.this));
             bind.recyclerPlaces.setHasFixedSize(true);
             bind.recyclerPlaces.setAdapter(placesAdapter);
@@ -56,21 +55,17 @@ public class PlacesListActivity extends AppCompatActivity {
         }
 
         private void loadPlaces() {
-            PlacesLoader.getInstance().getPlacesAsync(0, new PlacesLoader.LoadListener() {
+            ObservableField<Boolean> loadingObservable = placesAdapter.getItemCount() == 0 ? isDataLoading : null;
+            RestClient.getInstance().getPlacesAsync(0, new Callback<PlacesResponseModel>(PlacesListActivity.this, loadingObservable) {
                 @Override
-                public void onSuccess(ArrayList<PlaceModel> placeModels) {
-                    isDataLoading.set(false);
-                    bind.swipeContainer.setRefreshing(false);
-                    placesAdapter.setItems(placeModels);
-                }
-
-                @Override
-                public void onFailed(String errorString) {
-                    isDataLoading.set(false);
-                    bind.swipeContainer.setRefreshing(false);
-                    Utils.showErrorInSnackBar(PlacesListActivity.this, errorString);
+                public void onDataLoaded(PlacesResponseModel result) {
+                    if (result != null) {
+                        bind.swipeContainer.setRefreshing(false);
+                        placesAdapter.setItems(result.getBlock().getItems());
+                    }
                 }
             });
+
         }
     }
 

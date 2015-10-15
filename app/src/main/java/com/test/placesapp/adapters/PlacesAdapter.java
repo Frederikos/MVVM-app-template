@@ -9,16 +9,18 @@ import android.view.ViewGroup;
 
 import com.test.placesapp.R;
 import com.test.placesapp.databinding.ItemPlaceBinding;
-import com.test.placesapp.model.PlaceModel;
-import com.test.placesapp.network.PlacesLoader;
-import com.test.placesapp.utils.Utils;
+import com.test.placesapp.model.PlacesResponseModel;
+import com.test.placesapp.network.Callback;
+import com.test.placesapp.network.RestClient;
 import com.test.placesapp.viewmodel.PlaceItemViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.BindingHolder> {
-    private List<PlaceModel> places;
+    private static final int COUNT_PER_PAGE = 8;
+
+    private List<PlacesResponseModel.PlaceModel> places;
     private Activity activity;
     private boolean isReachedBottom;
     private boolean isWaitingForResponse;
@@ -46,7 +48,7 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.BindingHol
         return places.size();
     }
 
-    public void setItems(List<PlaceModel> places) {
+    public void setItems(List<PlacesResponseModel.PlaceModel> places) {
         isReachedBottom = false;
         this.places = places;
         notifyDataSetChanged();
@@ -54,7 +56,7 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.BindingHol
 
     protected void performPagination(int position) {
         if (!isReachedBottom && !isWaitingForResponse &&
-                getItemCount() - position < PlacesLoader.COUNT_PER_PAGE) {
+                getItemCount() - position < COUNT_PER_PAGE) {
             requestNextPage(getItemCount());
         }
     }
@@ -63,19 +65,15 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.BindingHol
     private void requestNextPage(int offset) {
         isWaitingForResponse = true;
 
-        PlacesLoader.getInstance().getPlacesAsync(1, new PlacesLoader.LoadListener() {
+        RestClient.getInstance().getPlacesAsync(1, new Callback<PlacesResponseModel>(activity, null) {
             @Override
-            public void onSuccess(ArrayList<PlaceModel> placeModels) {
+            public void onDataLoaded(PlacesResponseModel result) {
                 isWaitingForResponse = false;
                 isReachedBottom = true;
-                places.addAll(placeModels);
-                notifyItemRangeInserted(getItemCount(), places.size());
-            }
-
-            @Override
-            public void onFailed(String errorString) {
-                isWaitingForResponse = false;
-                Utils.showErrorInSnackBar(activity, errorString);
+                if (places != null) {
+                    places.addAll(places);
+                    notifyItemRangeInserted(getItemCount(), places.size());
+                }
             }
         });
     }
