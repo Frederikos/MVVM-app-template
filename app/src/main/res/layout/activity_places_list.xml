@@ -58,6 +58,15 @@
                 android:indeterminate="true"
                 android:visibility="@{viewModel.isDataLoading ? android.view.View.VISIBLE : android.view.View.GONE}" />
 
+            <Button
+                android:id="@+id/btn_reload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:onClick="@{viewModel.onReloadClick}"
+                android:text="@string/retry"
+                android:visibility="gone" />
+
         </RelativeLayout>
 
     </android.support.design.widget.CoordinatorLayout>

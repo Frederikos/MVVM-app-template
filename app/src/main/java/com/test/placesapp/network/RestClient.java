@@ -1,25 +1,23 @@
 package com.test.placesapp.network;
 
 import com.test.placesapp.model.PlacesResponseModel;
+
 import java.util.ArrayList;
 
-import retrofit.Call;
-import retrofit.GsonConverterFactory;
-import retrofit.Retrofit;
-import retrofit.http.GET;
-import retrofit.http.Url;
+import retrofit2.GsonConverterFactory;
+import retrofit2.Retrofit;
 
 public class RestClient {
 
-    private static final String PLACES_SERVICE_BASE_URL = "https://gist.githubusercontent.com/benigeri/1ba45a098aed0b21ae0c/raw/";
+    private static String PLACES_SERVICE_BASE_URL = "https://gist.githubusercontent.com/benigeri/1ba45a098aed0b21ae0c/raw/";
 
     private static final String PLACES_PAGE1_URL = "db28f872d6dd59c5766710abc685e01c25a0f020/places1.json";
     private static final String PLACES_PAGE2_URL = "1fccaeb4fefc105ed2d0430eea80ede57fe2a6e9/places2.json";
     private final ArrayList<String> placesPageUrls;
 
-    public interface PlacesService {
-        @GET
-        Call<PlacesResponseModel> getPlaces(@Url String url);
+    public static void setServerEndPoint(String serverEndPoint) {
+        PLACES_SERVICE_BASE_URL = serverEndPoint;
+        instance = null;
     }
 
     private static RestClient instance;
@@ -41,6 +39,7 @@ public class RestClient {
                 .baseUrl(PLACES_SERVICE_BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
+
         placesService = retrofit.create(PlacesService.class);
     }
 

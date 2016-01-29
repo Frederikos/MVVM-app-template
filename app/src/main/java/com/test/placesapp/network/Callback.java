@@ -2,16 +2,19 @@ package com.test.placesapp.network;
 
 import android.app.Activity;
 import android.databinding.ObservableField;
+import android.widget.Toast;
 
 import com.test.placesapp.R;
 import com.test.placesapp.utils.Utils;
 
+import org.json.JSONObject;
+
 import java.lang.ref.WeakReference;
 
-import retrofit.Response;
-import retrofit.Retrofit;
+import retrofit2.Response;
+import timber.log.Timber;
 
-public abstract class Callback<T> implements retrofit.Callback<T> {
+public abstract class Callback<T> implements retrofit2.Callback<T> {
 
     private WeakReference<Activity> activityReference;
     private ObservableField<Boolean> isDataLoading;
@@ -25,7 +28,7 @@ public abstract class Callback<T> implements retrofit.Callback<T> {
     }
 
     @Override
-    public void onResponse(Response<T> response, Retrofit retrofit) {
+    public void onResponse(Response<T> response) {
         Activity activity = activityReference.get();
         if (activity == null) return;
 
@@ -34,7 +37,13 @@ public abstract class Callback<T> implements retrofit.Callback<T> {
         }
 
         if (!response.isSuccess()) {
-            Utils.showErrorInSnackBar(activity, activity.getString(R.string.network_error));
+            try {
+                JSONObject errorResponse = new JSONObject(response.errorBody().string());
+                Utils.showErrorInSnackBar(activity, errorResponse.getJSONObject("error").getString("message"));
+            } catch (Exception e) {
+                Timber.e(e.toString());
+                Utils.showErrorInSnackBar(activity, activity.getString(R.string.network_error));
+            }
         }
 
         onDataLoaded(response.body());

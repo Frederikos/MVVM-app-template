@@ -7,6 +7,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
+import android.view.View;
 
 import com.test.placesapp.R;
 import com.test.placesapp.adapters.PlacesAdapter;
@@ -38,6 +39,11 @@ public class PlacesListActivity extends AppCompatActivity {
             loadPlaces();
         }
 
+        public void onReloadClick(View view) {
+            bind.btnReload.setVisibility(View.GONE);
+            loadPlaces();
+        }
+
         private void setupViews() {
             placesAdapter = new PlacesAdapter(PlacesListActivity.this);
 
@@ -62,6 +68,8 @@ public class PlacesListActivity extends AppCompatActivity {
                     if (result != null) {
                         bind.swipeContainer.setRefreshing(false);
                         placesAdapter.setItems(result.getBlock().getItems());
+                    } else {
+                        bind.btnReload.setVisibility(View.VISIBLE);
                     }
                 }
             });

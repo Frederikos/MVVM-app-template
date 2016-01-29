@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.BindingHolder> {
-    private static final int COUNT_PER_PAGE = 8;
+    private static final int COUNT_BEFORE_PAGINATION = 4;
 
     private List<PlacesResponseModel.PlaceModel> places;
     private Activity activity;
@@ -56,7 +56,7 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.BindingHol
 
     protected void performPagination(int position) {
         if (!isReachedBottom && !isWaitingForResponse &&
-                getItemCount() - position < COUNT_PER_PAGE) {
+                getItemCount() - position < COUNT_BEFORE_PAGINATION) {
             requestNextPage(getItemCount());
         }
     }
