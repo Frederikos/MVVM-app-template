@@ -1,0 +1,368 @@
+{
+  "type": "multiview",
+  "block": {
+    "hasMore": true,
+    "addl": {
+      "_empty_": "",
+      "lng": "30.5205383",
+      "lat": "50.4170801",
+      "ll": "50.4170801,30.5205383"
+    },
+    "share": {
+      "subject": "Red Vurbed Food near Kyiv, Kyiv City, Ukraine to you!",
+      "text": "Food near Kyiv, Kyiv City, Ukraine\n"
+    },
+    "cmd": "places food",
+    "nextPage": {
+      "addl": {
+        "offset": 8,
+        "sortByDistance": false,
+        "ll": "50.4170801,30.5205383"
+      },
+      "cmd": "places Food"
+    },
+    "items": [
+      {
+        "id": "516e6ecde4b0500ec1b54347",
+        "subtext": "Bakery",
+        "category": "Bakery",
+        "title": "Cinnabon",
+        "price": 2,
+        "location": {
+          "region": "Kyiv City",
+          "distance": 0.36040240098425,
+          "location": "Kyiv, Kyiv City",
+          "postal_code": "03150",
+          "street": "\u0432\u0443\u043b. \u0413\u043e\u0440\u044c\u043a\u043e\u0433\u043e, 176",
+          "longitude": 30.522050521684,
+          "latitude": 50.411954534072,
+          "country_code": "UA",
+          "country": "Ukraine",
+          "city": "Kyiv"
+        },
+        "name": "Cinnabon",
+        "link": {
+          "addl": {
+            "id": "516e6ecde4b0500ec1b54347"
+          },
+          "cmd": "places Cinnabon in Kyiv, Kyiv City"
+        },
+        "image": "https:\/\/irs1.4sqi.net\/img\/general\/300x300\/23680268_AmkN4AYmMQ8PnKFEml6N-fY21KBILUPsTZnn_BF938k.jpg",
+        "rating": {
+          "count": "361",
+          "fsValue": 8.8,
+          "type": "foursquare",
+          "text": "votes"
+        }
+      },
+      {
+        "id": "50a9edf2d63ef2103c459fcb",
+        "subtext": "Seafood",
+        "category": "Seafood",
+        "title": "\u041c\u0430\u0440\u043b\u0438\u043d \/ Marlin",
+        "price": 2,
+        "location": {
+          "region": "Kyiv City",
+          "distance": 0.35791691003766,
+          "location": "Kyiv, Kyiv City",
+          "postal_code": "03150",
+          "street": "\u0432\u0443\u043b. \u0413\u043e\u0440\u044c\u043a\u043e\u0433\u043e, 176",
+          "longitude": 30.52225112915,
+          "latitude": 50.412018246682,
+          "country_code": "UA",
+          "country": "Ukraine",
+          "city": "Kyiv"
+        },
+        "name": "\u041c\u0430\u0440\u043b\u0438\u043d \/ Marlin",
+        "link": {
+          "addl": {
+            "id": "50a9edf2d63ef2103c459fcb"
+          },
+          "cmd": "places \u041c\u0430\u0440\u043b\u0438\u043d \/ Marlin in Kyiv, Kyiv City"
+        },
+        "image": "https:\/\/irs0.4sqi.net\/img\/general\/300x300\/41740693_JlV5TuJVaOGXes0LVByh_oHD6mDauTsWg4bc9_7CYZ4.jpg",
+        "rating": {
+          "count": "741",
+          "fsValue": 8.5,
+          "type": "foursquare",
+          "text": "votes"
+        }
+      },
+      {
+        "id": "50ec595de4b040ac90cd5c29",
+        "subtext": "Italian",
+        "category": "Italian",
+        "title": "\u0418\u0442\u0430\u043b\u0438\u0434\u0437\u0435",
+        "price": 2,
+        "location": {
+          "region": "Kyiv City",
+          "distance": 0.27838119974648,
+          "location": "Kyiv, Kyiv City",
+          "postal_code": "03150",
+          "street": "\u0432\u0443\u043b. \u0413\u043e\u0440\u044c\u043a\u043e\u0433\u043e, 115",
+          "longitude": 30.518584624618,
+          "latitude": 50.420911089317,
+          "country_code": "UA",
+          "country": "Ukraine",
+          "city": "Kyiv"
+        },
+        "name": "\u0418\u0442\u0430\u043b\u0438\u0434\u0437\u0435",
+        "link": {
+          "addl": {
+            "id": "50ec595de4b040ac90cd5c29"
+          },
+          "cmd": "places \u0418\u0442\u0430\u043b\u0438\u0434\u0437\u0435 in Kyiv, Kyiv City"
+        },
+        "image": "https:\/\/irs1.4sqi.net\/img\/general\/300x300\/46507806_ikNyraGoYWGPRbzkPK90GYZTDWu65GpwQzVHdRIc9yY.jpg",
+        "rating": {
+          "count": "274",
+          "fsValue": 8.3,
+          "type": "foursquare",
+          "text": "votes"
+        }
+      },
+      {
+        "id": "505826dde4b05fe81e28f694",
+        "subtext": "Cupcakes",
+        "category": "Cupcakes",
+        "title": "Cup&Cake \/ \u041a\u0430\u043f&\u041a\u0435\u0439\u043a",
+        "price": 2,
+        "location": {
+          "region": "Kyiv City",
+          "distance": 1.0414269203524,
+          "location": "Kyiv, Kyiv City",
+          "postal_code": "03150",
+          "street": "\u0432\u0443\u043b. \u0412\u0435\u043b\u0438\u043a\u0430 \u0412\u0430\u0441\u0438\u043b\u044c\u043a\u0456\u0432\u0441\u044c\u043a\u0430, 57\/3",
+          "longitude": 30.516347587109,
+          "latitude": 50.431899730571,
+          "country_code": "UA",
+          "country": "Ukraine",
+          "city": "Kyiv"
+        },
+        "name": "Cup&Cake \/ \u041a\u0430\u043f&\u041a\u0435\u0439\u043a",
+        "link": {
+          "addl": {
+            "id": "505826dde4b05fe81e28f694"
+          },
+          "cmd": "places Cup&Cake \/ \u041a\u0430\u043f&\u041a\u0435\u0439\u043a in Kyiv, Kyiv City"
+        },
+        "image": "https:\/\/irs3.4sqi.net\/img\/general\/300x300\/36079383_iD4PBT3KBMcWGyKDul46vhlEmAKV2Jxi9p9ggGy-hQA.jpg",
+        "rating": {
+          "count": "2,098",
+          "fsValue": 9,
+          "type": "foursquare",
+          "text": "votes"
+        }
+      },
+      {
+        "id": "519396fa498ebdd455791617",
+        "subtext": "Modern European",
+        "category": "Modern European",
+        "title": "\u0420\u0435\u0441\u0442\u043e\u0440\u0430\u043d ODESSA",
+        "price": 3,
+        "location": {
+          "region": "Kyiv City",
+          "distance": 0.3896069196068,
+          "location": "Kyiv, Kyiv City",
+          "postal_code": "03150",
+          "street": "\u0432\u0443\u043b. \u0427\u0435\u0440\u0432\u043e\u043d\u043e\u0430\u0440\u043c\u0456\u0439\u0441\u044c\u043a\u0430, 114",
+          "longitude": 30.519131720066,
+          "latitude": 50.422643591769,
+          "country_code": "UA",
+          "country": "Ukraine",
+          "city": "Kyiv"
+        },
+        "name": "\u0420\u0435\u0441\u0442\u043e\u0440\u0430\u043d ODESSA",
+        "link": {
+          "addl": {
+            "id": "519396fa498ebdd455791617"
+          },
+          "cmd": "places \u0420\u0435\u0441\u0442\u043e\u0440\u0430\u043d ODESSA in Kyiv, Kyiv City"
+        },
+        "image": "https:\/\/irs0.4sqi.net\/img\/general\/300x300\/41026360_w_c-tLA0xSRH8mibhmJSNJJT5VW_QFWCh8e73eSpu5I.jpg",
+        "rating": {
+          "count": "661",
+          "fsValue": 8.3,
+          "type": "foursquare",
+          "text": "votes"
+        }
+      },
+      {
+        "id": "4de3e50efa7651589f219a5c",
+        "subtext": "Korean",
+        "category": "Korean",
+        "title": "Arirang \/ \u0410\u0440\u0438\u0440\u0430\u043d\u0433",
+        "price": 2,
+        "location": {
+          "region": "Kyiv City",
+          "distance": 0.0515801508693,
+          "location": "Kyiv, Kyiv City",
+          "street": "\u0432\u0443\u043b. \u0413\u043e\u0440\u044c\u043a\u043e\u0433\u043e, 160",
+          "longitude": 30.519869327545,
+          "latitude": 50.416462142421,
+          "country_code": "UA",
+          "country": "Ukraine",
+          "city": "Kyiv"
+        },
+        "name": "Arirang \/ \u0410\u0440\u0438\u0440\u0430\u043d\u0433",
+        "link": {
+          "addl": {
+            "id": "4de3e50efa7651589f219a5c"
+          },
+          "cmd": "places Arirang \/ \u0410\u0440\u0438\u0440\u0430\u043d\u0433 in Kyiv, Kyiv City"
+        },
+        "image": "https:\/\/irs1.4sqi.net\/img\/general\/300x300\/58567039_wZWqhtnN0YCuIPS0f0ME27aUHzXE9OwOH7AaD-GLFdQ.jpg",
+        "rating": {
+          "count": "83",
+          "fsValue": 8.1,
+          "type": "foursquare",
+          "text": "votes"
+        }
+      },
+      {
+        "id": "510ffa39e4b0681bc26d4fe5",
+        "subtext": "Churrascaria",
+        "category": "Churrascaria",
+        "title": "Grill do Brasil",
+        "price": 2,
+        "location": {
+          "region": "Kyiv City",
+          "distance": 1.1222053761169,
+          "location": "Kyiv, Kyiv City",
+          "postal_code": "01133",
+          "street": "\u0431\u0443\u043b. \u041b\u0435\u0441\u0456 \u0423\u043a\u0440\u0430\u0457\u043d\u043a\u0438, 24",
+          "longitude": 30.535218066817,
+          "latitude": 50.430343473834,
+          "country_code": "UA",
+          "country": "Ukraine",
+          "city": "Kyiv"
+        },
+        "name": "Grill do Brasil",
+        "link": {
+          "addl": {
+            "id": "510ffa39e4b0681bc26d4fe5"
+          },
+          "cmd": "places Grill do Brasil in Kyiv, Kyiv City"
+        },
+        "image": "https:\/\/irs2.4sqi.net\/img\/general\/300x300\/48656769_PBsrgNEd_0I9se6w4IyLS-SvAwd13gGphIbQ2RHliqo.jpg",
+        "rating": {
+          "count": "871",
+          "fsValue": 8.8,
+          "type": "foursquare",
+          "text": "votes"
+        }
+      },
+      {
+        "id": "520bc0a0498efc5ac88b3201",
+        "subtext": "Burgers",
+        "category": "Burgers",
+        "title": "Furgoneta",
+        "price": 2,
+        "location": {
+          "region": "Kyiv City",
+          "distance": 1.0619322206619,
+          "location": "Kyiv, Kyiv City",
+          "postal_code": "03150",
+          "street": "\u0432\u0443\u043b. \u0424\u0456\u0437\u043a\u0443\u043b\u044c\u0442\u0443\u0440\u0438, 51",
+          "longitude": 30.514118671417,
+          "latitude": 50.431882645033,
+          "country_code": "UA",
+          "country": "Ukraine",
+          "city": "Kyiv"
+        },
+        "name": "Furgoneta",
+        "link": {
+          "addl": {
+            "id": "520bc0a0498efc5ac88b3201"
+          },
+          "cmd": "places Furgoneta in Kyiv, Kyiv City"
+        },
+        "image": "https:\/\/irs1.4sqi.net\/img\/general\/300x300\/7561326_OUBX-4YWZLmrRaZXGUQy37DYUWu4p2ZPwp-zBQ8VFzo.jpg",
+        "rating": {
+          "count": "547",
+          "fsValue": 8.7,
+          "type": "foursquare",
+          "text": "votes"
+        }
+      }
+    ],
+    "service": "places",
+    "offset": 0,
+    "filters": [
+      {
+        "type": "distance",
+        "items": [
+          {
+            "value": 320,
+            "text": "0.2 mi"
+          },
+          {
+            "value": 800,
+            "text": "0.5 mi"
+          },
+          {
+            "value": 1600,
+            "text": "1 mi"
+          },
+          {
+            "value": 8000,
+            "text": "5 mi"
+          }
+        ],
+        "addl": {
+          "sortByDistance": false,
+          "ll": "50.4170801,30.5205383"
+        },
+        "name": "radius"
+      },
+      {
+        "type": "location",
+        "text": "Kyiv, Kyiv City, Ukraine",
+        "ll": "50.4170801,30.5205383",
+        "name": "location"
+      },
+      {
+        "type": "slider_double",
+        "items": [
+          {
+            "value": 1,
+            "start": true,
+            "text": "$"
+          },
+          {
+            "value": 2,
+            "text": "$$"
+          },
+          {
+            "value": 3,
+            "text": "$$$"
+          },
+          {
+            "value": 4,
+            "end": true,
+            "text": "$$$$"
+          }
+        ],
+        "text": "Price",
+        "name": "price"
+      },
+      {
+        "type": "radio",
+        "items": [
+          {
+            "value": 0,
+            "selected": true,
+            "text": "View All"
+          },
+          {
+            "value": 1,
+            "text": "Open Now"
+          }
+        ],
+        "text": "Hours",
+        "name": "open"
+      }
+    ]
+  },
+  "success": true
+}

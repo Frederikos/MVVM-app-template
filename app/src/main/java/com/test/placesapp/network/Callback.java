@@ -2,10 +2,10 @@ package com.test.placesapp.network;
 
 import android.app.Activity;
 import android.databinding.ObservableField;
-import android.widget.Toast;
+import android.support.annotation.Nullable;
 
 import com.test.placesapp.R;
-import com.test.placesapp.utils.Utils;
+import com.test.placesapp.utils.UtilsUI;
 
 import org.json.JSONObject;
 
@@ -39,10 +39,10 @@ public abstract class Callback<T> implements retrofit2.Callback<T> {
         if (!response.isSuccess()) {
             try {
                 JSONObject errorResponse = new JSONObject(response.errorBody().string());
-                Utils.showErrorInSnackBar(activity, errorResponse.getJSONObject("error").getString("message"));
+                UtilsUI.showErrorInSnackBar(activity, errorResponse.getJSONObject("error").getString("message"));
             } catch (Exception e) {
                 Timber.e(e.toString());
-                Utils.showErrorInSnackBar(activity, activity.getString(R.string.network_error));
+                UtilsUI.showErrorInSnackBar(activity, activity.getString(R.string.network_error));
             }
         }
 
@@ -58,9 +58,9 @@ public abstract class Callback<T> implements retrofit2.Callback<T> {
             isDataLoading.set(false);
         }
 
-        Utils.showErrorInSnackBar(activity, activity.getString(R.string.network_error));
+        UtilsUI.showErrorInSnackBar(activity, activity.getString(R.string.network_error));
         onDataLoaded(null);
     }
 
-    public abstract void onDataLoaded(T result);
+    public abstract void onDataLoaded(@Nullable T result);
 }

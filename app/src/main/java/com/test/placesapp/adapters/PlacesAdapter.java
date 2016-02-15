@@ -11,7 +11,7 @@ import com.test.placesapp.R;
 import com.test.placesapp.databinding.ItemPlaceBinding;
 import com.test.placesapp.model.PlacesResponseModel;
 import com.test.placesapp.network.Callback;
-import com.test.placesapp.network.RestClient;
+import com.test.placesapp.network.ApiClient;
 import com.test.placesapp.viewmodel.PlaceItemViewModel;
 
 import java.util.ArrayList;
@@ -65,14 +65,15 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.BindingHol
     private void requestNextPage(int offset) {
         isWaitingForResponse = true;
 
-        RestClient.getInstance().getPlacesAsync(1, new Callback<PlacesResponseModel>(activity, null) {
+        ApiClient.getInstance().getPlacesAsync(1, new Callback<PlacesResponseModel>(activity, null) {
             @Override
             public void onDataLoaded(PlacesResponseModel result) {
                 isWaitingForResponse = false;
                 isReachedBottom = true;
-                if (places != null) {
-                    places.addAll(places);
-                    notifyItemRangeInserted(getItemCount(), places.size());
+                if (result != null) {
+                    List<PlacesResponseModel.PlaceModel> newPlaces = result.getBlock().getItems();
+                    places.addAll(newPlaces);
+                    notifyItemRangeInserted(getItemCount(), newPlaces.size());
                 }
             }
         });

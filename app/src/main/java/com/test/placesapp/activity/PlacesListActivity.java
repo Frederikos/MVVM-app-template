@@ -14,7 +14,7 @@ import com.test.placesapp.adapters.PlacesAdapter;
 import com.test.placesapp.databinding.ActivityPlacesListBinding;
 import com.test.placesapp.model.PlacesResponseModel;
 import com.test.placesapp.network.Callback;
-import com.test.placesapp.network.RestClient;
+import com.test.placesapp.network.ApiClient;
 
 public class PlacesListActivity extends AppCompatActivity {
 
@@ -62,7 +62,7 @@ public class PlacesListActivity extends AppCompatActivity {
 
         private void loadPlaces() {
             ObservableField<Boolean> loadingObservable = placesAdapter.getItemCount() == 0 ? isDataLoading : null;
-            RestClient.getInstance().getPlacesAsync(0, new Callback<PlacesResponseModel>(PlacesListActivity.this, loadingObservable) {
+            ApiClient.getInstance().getPlacesAsync(0, new Callback<PlacesResponseModel>(PlacesListActivity.this, loadingObservable) {
                 @Override
                 public void onDataLoaded(PlacesResponseModel result) {
                     if (result != null) {

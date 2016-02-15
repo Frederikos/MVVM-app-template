@@ -44,7 +44,6 @@ dependencies {
 
     androidTestCompile 'junit:junit:4.12'
     androidTestCompile 'com.squareup.okhttp3:mockwebserver:3.0.0-RC1'
-
     androidTestCompile('com.android.support.test:runner:0.4.1') {
         exclude group: 'com.android.support', module: 'support-annotations'
     }
@@ -53,5 +52,11 @@ dependencies {
     }
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.1') {
         exclude group: 'com.android.support', module: 'support-annotations'
+    }
+    androidTestCompile('com.android.support.test.espresso:espresso-contrib:2.0') {
+        exclude group: 'com.android.support', module: 'appcompat'
+        exclude group: 'com.android.support', module: 'support-v4'
+        exclude group: 'com.android.support', module: 'support-annotations'
+        exclude module: 'recyclerview-v7'
     }
 }
