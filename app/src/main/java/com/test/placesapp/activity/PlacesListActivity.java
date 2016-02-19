@@ -1,6 +1,5 @@
 package com.test.placesapp.activity;
 
-import android.databinding.BaseObservable;
 import android.databinding.DataBindingUtil;
 import android.databinding.ObservableField;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -18,16 +17,16 @@ import com.test.placesapp.network.ApiClient;
 
 public class PlacesListActivity extends AppCompatActivity {
 
-    ActivityPlacesListBinding bind;
+    ActivityPlacesListBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bind = DataBindingUtil.setContentView(this, R.layout.activity_places_list);
-        bind.setViewModel(new PlacesActivityViewModel());
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_places_list);
+        binding.setViewModel(new PlacesActivityViewModel());
     }
 
-    public class PlacesActivityViewModel extends BaseObservable {
+    public class PlacesActivityViewModel {
         public final ObservableField<Boolean> isDataLoading = new ObservableField<>();
         public final String title = getString(R.string.places_list);
 
@@ -40,19 +39,19 @@ public class PlacesListActivity extends AppCompatActivity {
         }
 
         public void onReloadClick(View view) {
-            bind.btnReload.setVisibility(View.GONE);
+            binding.btnReload.setVisibility(View.GONE);
             loadPlaces();
         }
 
         private void setupViews() {
             placesAdapter = new PlacesAdapter(PlacesListActivity.this);
 
-            bind.recyclerPlaces.setLayoutManager(new LinearLayoutManager(PlacesListActivity.this));
-            bind.recyclerPlaces.setHasFixedSize(true);
-            bind.recyclerPlaces.setAdapter(placesAdapter);
+            binding.recyclerPlaces.setLayoutManager(new LinearLayoutManager(PlacesListActivity.this));
+            binding.recyclerPlaces.setHasFixedSize(true);
+            binding.recyclerPlaces.setAdapter(placesAdapter);
 
-            bind.swipeContainer.setColorSchemeResources(R.color.colorPrimary);
-            bind.swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            binding.swipeContainer.setColorSchemeResources(R.color.colorPrimary);
+            binding.swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
                 @Override
                 public void onRefresh() {
                     loadPlaces();
@@ -66,14 +65,13 @@ public class PlacesListActivity extends AppCompatActivity {
                 @Override
                 public void onDataLoaded(PlacesResponseModel result) {
                     if (result != null) {
-                        bind.swipeContainer.setRefreshing(false);
+                        binding.swipeContainer.setRefreshing(false);
                         placesAdapter.setItems(result.getBlock().getItems());
                     } else {
-                        bind.btnReload.setVisibility(View.VISIBLE);
+                        binding.btnReload.setVisibility(View.VISIBLE);
                     }
                 }
             });
-
         }
     }
 

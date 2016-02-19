@@ -1,5 +1,8 @@
 package com.test.placesapp.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.Expose;
 
 import java.util.ArrayList;
@@ -139,7 +142,7 @@ public class PlacesResponseModel {
         }
     }
 
-    public class PlaceModel {
+    public static class PlaceModel implements Parcelable {
         @Expose
         private String id;
         @Expose
@@ -158,6 +161,27 @@ public class PlacesResponseModel {
         private String image;
         @Expose
         private Rating rating;
+
+        protected PlaceModel(Parcel in) {
+            id = in.readString();
+            subtext = in.readString();
+            category = in.readString();
+            title = in.readString();
+            name = in.readString();
+            image = in.readString();
+        }
+
+        public static final Creator<PlaceModel> CREATOR = new Creator<PlaceModel>() {
+            @Override
+            public PlaceModel createFromParcel(Parcel in) {
+                return new PlaceModel(in);
+            }
+
+            @Override
+            public PlaceModel[] newArray(int size) {
+                return new PlaceModel[size];
+            }
+        };
 
         /**
          * @return The id
@@ -285,6 +309,20 @@ public class PlacesResponseModel {
             this.rating = rating;
         }
 
+        @Override
+        public int describeContents() {
+            return 0;
+        }
+
+        @Override
+        public void writeToParcel(Parcel dest, int flags) {
+            dest.writeString(id);
+            dest.writeString(subtext);
+            dest.writeString(category);
+            dest.writeString(title);
+            dest.writeString(name);
+            dest.writeString(image);
+        }
     }
 
     public class Location {
@@ -450,7 +488,7 @@ public class PlacesResponseModel {
         }
     }
 
-    public class Rating {
+    public static class Rating {
         @Expose
         private String count;
         @Expose

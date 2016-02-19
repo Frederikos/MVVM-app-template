@@ -22,8 +22,4 @@
         <item name="android:gravity">left</item>
     </style>
 
-    <style name="ToolbarTheme" parent="Base.AppTheme">
-        <item name="android:textColorPrimary">@color/white</item>
-    </style>
-
 </resources>

@@ -9,19 +9,18 @@ import retrofit2.Retrofit;
 
 public class ApiClient {
 
-    public static String PLACES_SERVICE_BASE_URL = "https://gist.githubusercontent.com/benigeri/1ba45a098aed0b21ae0c/raw/";
-
+    private static String sBaseUrl = PlacesService.BASE_URL;
     private static final String PLACES_PAGE1_URL = "db28f872d6dd59c5766710abc685e01c25a0f020/places1.json";
     private static final String PLACES_PAGE2_URL = "1fccaeb4fefc105ed2d0430eea80ede57fe2a6e9/places2.json";
-    private final ArrayList<String> placesPageUrls;
+    private static ApiClient instance;
 
-    public static void setServerEndPoint(String serverEndPoint) {
-        PLACES_SERVICE_BASE_URL = serverEndPoint;
+    private final ArrayList<String> placesPageUrls;
+    private final PlacesService placesService;
+
+    public static void setBaseUrl(String baseUrl) {
+        sBaseUrl = baseUrl;
         instance = null;
     }
-
-    private static ApiClient instance;
-    private final PlacesService placesService;
 
     public static synchronized ApiClient getInstance() {
         if (instance == null) {
@@ -36,7 +35,7 @@ public class ApiClient {
         placesPageUrls.add(PLACES_PAGE2_URL);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(PLACES_SERVICE_BASE_URL)
+                .baseUrl(sBaseUrl)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
