@@ -6,4 +6,6 @@
     <dimen name="image_min_height">300dp</dimen>
     <dimen name="list_item_padding">10dp</dimen>
     <dimen name="lv_header_height">200dp</dimen>
+    <dimen name="detail_image_height">300dp</dimen>
+    <dimen name="statusbar_height">24dp</dimen>
 </resources>

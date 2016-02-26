@@ -8,25 +8,65 @@
             type="com.test.placesapp.activity.PlaceDetailsActivity.PlaceDetailsViewModel" />
     </data>
 
-    <LinearLayout
-        android:id="@+id/container"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:background="@android:color/white">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+        <com.test.placesapp.widget.SquareImageView
+            android:id="@+id/iv_place_image"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:title="@{viewModel.title}" />
+            android:layout_height="wrap_content" />
 
-        <ImageView
+        <com.test.placesapp.widget.ObservableScrollView
+            android:id="@+id/main_scroll_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="@dimen/image_min_height"
-            app:imageUrl="@{viewModel.imageUrl}" />
-    </LinearLayout>
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingTop="@dimen/detail_image_height"
+            android:theme="@style/ColorEdgeEffect">
+
+            <TextView
+                android:id="@+id/tv_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:minHeight="200dp"
+                android:padding="16dp"
+                android:text="@{viewModel.description}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+        </com.test.placesapp.widget.ObservableScrollView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/detail_image_height"
+                android:fitsSystemWindows="true"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/toolbar"
+                android:layout_marginLeft="56dp"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLength="15"
+                android:maxLines="1"
+                android:minHeight="56dp"
+                android:text="@{viewModel.title}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title.Inverse"
+                android:transformPivotX="0dp" />
+
+        </RelativeLayout>
+
+    </FrameLayout>
 
 </layout>

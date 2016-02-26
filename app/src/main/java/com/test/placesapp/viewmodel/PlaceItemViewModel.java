@@ -2,20 +2,25 @@ package com.test.placesapp.viewmodel;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.view.View;
 
 import com.test.placesapp.R;
 import com.test.placesapp.activity.PlaceDetailsActivity;
+import com.test.placesapp.databinding.ItemPlaceBinding;
 import com.test.placesapp.model.PlacesResponseModel;
 
 public class PlaceItemViewModel {
 
     private Activity activity;
     private PlacesResponseModel.PlaceModel placeModel;
+    private ItemPlaceBinding binding;
 
-    public PlaceItemViewModel(Activity activity, PlacesResponseModel.PlaceModel placeModel) {
+    public PlaceItemViewModel(Activity activity, ItemPlaceBinding binding, PlacesResponseModel.PlaceModel placeModel) {
         this.activity = activity;
         this.placeModel = placeModel;
+        this.binding = binding;
     }
 
     public String getPlaceTitle() {
@@ -41,7 +46,8 @@ public class PlaceItemViewModel {
     public void onClick(View view) {
         Intent intent = new Intent(activity, PlaceDetailsActivity.class);
         intent.putExtra(PlaceDetailsActivity.KEY_PLACE, placeModel);
-        activity.startActivity(intent);
+        ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(activity, binding.ivPlaceImage, PlaceDetailsActivity.SHARED_ELEMENT_TRANSITION);
+        ActivityCompat.startActivity(activity, intent, options.toBundle());
     }
 
 }

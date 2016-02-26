@@ -6,6 +6,7 @@ import android.support.test.rule.ActivityTestRule;
 
 import com.squareup.spoon.Spoon;
 import com.test.placesapp.R;
+import com.test.placesapp.activity.PlaceDetailsActivity;
 import com.test.placesapp.activity.PlacesListActivity;
 import com.test.placesapp.network.ApiClient;
 import com.test.placesapp.utils.TestAssets;
@@ -24,8 +25,11 @@ import okhttp3.mockwebserver.MockWebServer;
 
 import static android.support.test.InstrumentationRegistry.getInstrumentation;
 import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.swipeDown;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
+import static android.support.test.espresso.intent.Intents.intended;
+import static android.support.test.espresso.intent.matcher.IntentMatchers.hasComponent;
 import static android.support.test.espresso.matcher.ViewMatchers.hasDescendant;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;

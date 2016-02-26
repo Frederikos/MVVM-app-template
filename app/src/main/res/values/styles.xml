@@ -22,4 +22,6 @@
         <item name="android:gravity">left</item>
     </style>
 
+    <style name="ColorEdgeEffect" />
+
 </resources>

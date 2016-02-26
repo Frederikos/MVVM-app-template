@@ -39,7 +39,7 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.BindingHol
     public void onBindViewHolder(BindingHolder holder, int position) {
         performPagination(position);
         ItemPlaceBinding placeBinding = holder.getBinding();
-        placeBinding.setViewModel(new PlaceItemViewModel(activity, places.get(position)));
+        placeBinding.setViewModel(new PlaceItemViewModel(activity, placeBinding, places.get(position)));
         holder.getBinding().executePendingBindings();
     }
 

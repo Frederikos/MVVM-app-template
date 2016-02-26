@@ -15,7 +15,7 @@ import com.test.placesapp.model.PlacesResponseModel;
 import com.test.placesapp.network.Callback;
 import com.test.placesapp.network.ApiClient;
 
-public class PlacesListActivity extends AppCompatActivity {
+public class PlacesListActivity extends BaseActivity {
 
     ActivityPlacesListBinding binding;
 
@@ -47,7 +47,6 @@ public class PlacesListActivity extends AppCompatActivity {
             placesAdapter = new PlacesAdapter(PlacesListActivity.this);
 
             binding.recyclerPlaces.setLayoutManager(new LinearLayoutManager(PlacesListActivity.this));
-            binding.recyclerPlaces.setHasFixedSize(true);
             binding.recyclerPlaces.setAdapter(placesAdapter);
 
             binding.swipeContainer.setColorSchemeResources(R.color.colorPrimary);
