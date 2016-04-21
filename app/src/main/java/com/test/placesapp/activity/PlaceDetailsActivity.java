@@ -36,7 +36,6 @@ public class PlaceDetailsActivity extends BaseActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             binding.ivPlaceImage.setTransitionName(SHARED_ELEMENT_TRANSITION);
-
         }
 
         setSupportActionBar(binding.toolbar);

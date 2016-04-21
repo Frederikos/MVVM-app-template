@@ -19,8 +19,8 @@ public class PlaceItemViewModel {
 
     public PlaceItemViewModel(Activity activity, ItemPlaceBinding binding, PlacesResponseModel.PlaceModel placeModel) {
         this.activity = activity;
-        this.placeModel = placeModel;
         this.binding = binding;
+        this.placeModel = placeModel;
     }
 
     public String getPlaceTitle() {
