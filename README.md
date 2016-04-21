@@ -8,8 +8,11 @@ Currently it contains 2 screens: places list with pull to refresh and test pagin
 
 # Libraries used
 https://github.com/JakeWharton/timber - For logging.
+
 https://github.com/MrEngineer13/SnackBar - UI control for displaying errors and info.
+
 https://github.com/bumptech/glide - For loading images.
+
 https://github.com/square/retrofit - Http client.
 
 https://github.com/square/okhttp/tree/master/mockwebserver - Mocking network requests for testing.
