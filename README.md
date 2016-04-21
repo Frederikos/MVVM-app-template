@@ -16,6 +16,8 @@ https://github.com/bumptech/glide - For loading images.
 https://github.com/square/retrofit - Http client.
 
 https://github.com/square/okhttp/tree/master/mockwebserver - Mocking network requests for testing.
+
 https://google.github.io/android-testing-support-library/docs/espresso/ - For UI testing.
+
 https://github.com/square/spoon - For distributing tests and generate test reports.
 
