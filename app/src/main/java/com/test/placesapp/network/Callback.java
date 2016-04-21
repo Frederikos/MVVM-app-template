@@ -11,6 +11,7 @@ import org.json.JSONObject;
 
 import java.lang.ref.WeakReference;
 
+import retrofit2.Call;
 import retrofit2.Response;
 import timber.log.Timber;
 
@@ -28,7 +29,7 @@ public abstract class Callback<T> implements retrofit2.Callback<T> {
     }
 
     @Override
-    public void onResponse(Response<T> response) {
+    public void onResponse(Call<T> call, Response<T> response) {
         Activity activity = activityReference.get();
         if (activity == null) return;
 
@@ -36,7 +37,7 @@ public abstract class Callback<T> implements retrofit2.Callback<T> {
             isDataLoading.set(false);
         }
 
-        if (!response.isSuccess()) {
+        if (!response.isSuccessful()) {
             try {
                 JSONObject errorResponse = new JSONObject(response.errorBody().string());
                 UtilsUI.showErrorInSnackBar(activity, errorResponse.getJSONObject("error").getString("message"));
@@ -50,7 +51,7 @@ public abstract class Callback<T> implements retrofit2.Callback<T> {
     }
 
     @Override
-    public void onFailure(Throwable t) {
+    public void onFailure(Call<T> call, Throwable t) {
         Activity activity = activityReference.get();
         if (activity == null) return;
 

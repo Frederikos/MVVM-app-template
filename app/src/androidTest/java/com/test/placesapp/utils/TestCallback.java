@@ -7,6 +7,7 @@ import com.test.placesapp.network.Callback;
 
 import java.io.IOException;
 
+import retrofit2.Call;
 import retrofit2.Response;
 
 import static junit.framework.Assert.fail;
@@ -18,8 +19,8 @@ public abstract class TestCallback<T> extends Callback<T> {
     }
 
     @Override
-    public void onResponse(Response<T> response) {
-        if (!response.isSuccess()) {
+    public void onResponse(Call<T> call, Response<T> response) {
+        if (!response.isSuccessful()) {
             try {
                 fail(response.errorBody().string());
             } catch (IOException e) {
@@ -30,7 +31,7 @@ public abstract class TestCallback<T> extends Callback<T> {
     }
 
     @Override
-    public void onFailure(Throwable t) {
+    public void onFailure(Call<T> call, Throwable t) {
         fail("Network error");
     }
 }
