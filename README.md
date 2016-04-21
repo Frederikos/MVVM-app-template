@@ -1,4 +1,4 @@
-# MVVMsample
-Android MVVM sample project. RecycleView adapter binding.
+# MVVM app template
 
-For now it's just simple sample of work with data binding plugin.
+Sample application to play with new Android frameworks and libraries.
+Currently it contains 2 screens: places list with pull to refresh and test pagination, place details.
